@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "charming",
+	"version": "${mod_version}",
+	"name": "Charm",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.disorganized.charming.Charming"
+		],
+		"client": [
+			"net.disorganized.charming.CharmingClient"
+		],
+		"fabric-datagen": [
+			"net.disorganized.charming.CharmingDataGenerator"
+		]
+	},
+	"mixins": [
+		"charming.mixins.json",
+		{
+			"config": "charming.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"accessWidener": "charming.accesswidener",
+	"depends": {
+		"fabric-api": ">=${fabric_version}"
+	}
+}
