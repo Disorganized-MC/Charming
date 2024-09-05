@@ -35,6 +35,7 @@ public abstract class ItemStackMixin {
             )
     )
     private void addComponentTooltips(Item.TooltipContext context, PlayerEntity player, TooltipType type, CallbackInfoReturnable<List<Text>> cir, @Local List<Text> list) {
+        appendTooltip(CharmComponents.ITEM_NOTCHES, context, list::add, type);
         appendTooltip(CharmComponents.ITEM_CHARMS, context, list::add, type);
     }
 

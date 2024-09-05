@@ -1,10 +1,13 @@
 package net.disorganized.charming;
 
+import net.disorganized.charming.content.ItemNotchesComponent;
 import net.disorganized.charming.registry.CharmComponents;
 import net.disorganized.charming.registry.CharmRegistry;
 import net.disorganized.charming.registry.CharmTags;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.item.v1.DefaultItemComponentEvents;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,7 +28,14 @@ public class Charming implements ModInitializer {
 		CharmComponents.init();
 		CharmTags.init();
 
+		DefaultItemComponentEvents.MODIFY.register(Charming::modifyItems);
+
 		LOGGER.info("Initialized!");
+	}
+
+
+	public static void modifyItems(DefaultItemComponentEvents.ModifyContext context) {
+		context.modify(Items.DIAMOND_CHESTPLATE, builder -> builder.add(CharmComponents.ITEM_NOTCHES, new ItemNotchesComponent(1)));
 	}
 
 }

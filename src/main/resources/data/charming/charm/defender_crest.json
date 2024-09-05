@@ -1,0 +1,14 @@
+{
+	"supported_items": "#minecraft:chest_armor",
+	"notch_cost": 2,
+	"effects": {
+		"minecraft:attributes": [
+			{
+				"id": "charming:defender_crest_armor",
+				"attribute": "minecraft:generic.armor",
+				"amount": 5,
+				"operation": "add_value"
+			}
+		]
+	}
+}

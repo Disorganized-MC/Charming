@@ -3,6 +3,7 @@ package net.disorganized.charming.registry;
 import com.mojang.serialization.Codec;
 import net.disorganized.charming.Charming;
 import net.disorganized.charming.content.ItemCharmsComponent;
+import net.disorganized.charming.content.ItemNotchesComponent;
 import net.minecraft.component.ComponentType;
 import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.registry.Registries;
@@ -14,6 +15,7 @@ public class CharmComponents {
 
 
     public static final ComponentType<ItemCharmsComponent> ITEM_CHARMS = register("charms", ItemCharmsComponent.CODEC);
+    public static final ComponentType<ItemNotchesComponent> ITEM_NOTCHES = register("notches", ItemNotchesComponent.CODEC);
 
 
     public static <T> ComponentType<T> register(String path, Codec<T> codec) {
