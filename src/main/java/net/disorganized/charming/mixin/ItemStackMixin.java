@@ -1,9 +1,8 @@
 package net.disorganized.charming.mixin;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import net.disorganized.charming.registry.CharmComponents;
+import net.disorganized.charming.registry.CharmingComponents;
 import net.minecraft.component.ComponentType;
-import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -35,8 +34,8 @@ public abstract class ItemStackMixin {
             )
     )
     private void addComponentTooltips(Item.TooltipContext context, PlayerEntity player, TooltipType type, CallbackInfoReturnable<List<Text>> cir, @Local List<Text> list) {
-        appendTooltip(CharmComponents.ITEM_NOTCHES, context, list::add, type);
-        appendTooltip(CharmComponents.ITEM_CHARMS, context, list::add, type);
+        appendTooltip(CharmingComponents.ITEM_NOTCHES, context, list::add, type);
+        appendTooltip(CharmingComponents.ITEM_CHARMS, context, list::add, type);
     }
 
 }

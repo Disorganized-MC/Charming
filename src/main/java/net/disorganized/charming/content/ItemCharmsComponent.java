@@ -2,9 +2,9 @@ package net.disorganized.charming.content;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.disorganized.charming.registry.CharmComponents;
-import net.disorganized.charming.registry.CharmRegistry;
-import net.disorganized.charming.registry.CharmTags;
+import net.disorganized.charming.registry.CharmingComponents;
+import net.disorganized.charming.registry.CharmingRegistries;
+import net.disorganized.charming.registry.CharmingTags;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -32,7 +32,7 @@ public record ItemCharmsComponent (
     ).apply(instance, ItemCharmsComponent::new));
 
     public static ItemCharmsComponent get(ItemStack stack) {
-        return stack.getOrDefault(CharmComponents.ITEM_CHARMS, DEFAULT);
+        return stack.getOrDefault(CharmingComponents.ITEM_CHARMS, DEFAULT);
     }
 
 
@@ -41,7 +41,7 @@ public record ItemCharmsComponent (
         if (!this.showInTooltip) return;
 
         RegistryWrapper.WrapperLookup lookup = context.getRegistryLookup();
-        RegistryEntryList<Charm> charms = ItemEnchantmentsComponent.getTooltipOrderList(lookup, CharmRegistry.KEY, CharmTags.TOOLTIP_ORDER);
+        RegistryEntryList<Charm> charms = ItemEnchantmentsComponent.getTooltipOrderList(lookup, CharmingRegistries.KEY, CharmingTags.TOOLTIP_ORDER);
 
 //        lookup.getWrapperOrThrow(CharmRegistry.KEY).streamEntries().forEach(charm -> {
 //            tooltip.accept(Charm.getDescription(charm));

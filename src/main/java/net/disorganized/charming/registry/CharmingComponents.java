@@ -9,7 +9,7 @@ import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
-public class CharmComponents {
+public class CharmingComponents {
 
     public static void init() {}
 

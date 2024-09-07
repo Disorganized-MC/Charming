@@ -3,6 +3,7 @@
 	"package": "net.disorganized.charming.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+		"AirJumpMixin",
 		"ItemStackMixin"
 	],
 	"injectors": {

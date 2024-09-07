@@ -1,15 +1,13 @@
 package net.disorganized.charming.content;
 
 import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.disorganized.charming.registry.CharmComponents;
+import net.disorganized.charming.registry.CharmingComponents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipAppender;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
 
-import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public record ItemNotchesComponent (
@@ -24,7 +22,7 @@ public record ItemNotchesComponent (
     );
 
     public static ItemNotchesComponent get(ItemStack stack) {
-        return stack.getOrDefault(CharmComponents.ITEM_NOTCHES, DEFAULT);
+        return stack.getOrDefault(CharmingComponents.ITEM_NOTCHES, DEFAULT);
     }
 
 

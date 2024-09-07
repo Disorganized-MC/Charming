@@ -3,9 +3,8 @@ package net.disorganized.charming.registry;
 import net.disorganized.charming.Charming;
 import net.disorganized.charming.content.Charm;
 import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
 
-public class CharmTags {
+public class CharmingTags {
 
     public static void init() {}
 
@@ -14,7 +13,7 @@ public class CharmTags {
 
 
     public static TagKey<Charm> of(String path) {
-        return TagKey.of(CharmRegistry.KEY, Charming.of(path));
+        return TagKey.of(CharmingRegistries.KEY, Charming.of(path));
     }
 
 }
